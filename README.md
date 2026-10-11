@@ -50,4 +50,5 @@ in `R/` in numbered order. Packages: `readxl`, `dplyr`, `tidyr`.
 - Visualisations (ggplot2) and a full Quarto report
 
 ## Author
-[Rabiyatul Adawiyah, DVM, MPH (Health Promotion)] · [https://www.linkedin.com/in/rabiyatul]
+[Rabiyatul Adawiyah, DVM, MPH (Health Promotion)]
+[https://www.linkedin.com/in/rabiyatul]
