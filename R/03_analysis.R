@@ -77,5 +77,8 @@ write.csv(sex_compare, "outputs/tables/sex_comparison.csv", row.names = FALSE)
 # - Prevalence fell from 38.8% (16-24) to 5.4% (75-85)
 # - Highest: females aged 16-24 (45.6%)
 # - Sex gap by age: PR stable (1.23-1.45); PD shrinks from 13.2 (16-24) to 1.1 (75-85)
+# - Ratios based on very small prevalences (e.g. substance use at 65+)
+#     are unreliable; female substance use at 75-85 is ABS "nil",
+#     so its PR of 0 should not be interpreted
 # - Point estimates only - confidence intervals still to be added
 # =============================================================
