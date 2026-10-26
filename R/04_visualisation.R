@@ -13,6 +13,7 @@
 # 1. Load packages and results
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 
 prevalence <- read.csv("outputs/tables/prevalence.csv",
                        fileEncoding = "UTF-8")
@@ -44,3 +45,34 @@ p_any
 # 4. Save the figure
 ggsave("outputs/figures/prevalence_any_by_age_sex.png",
        p_any, width = 8, height = 5, dpi = 300)
+
+# 5. Small multiples: each disorder group by age and sex
+plot_disorders <- plot_data %>%
+  pivot_longer(c(anxiety_pct, affective_pct, substance_pct),
+               names_to = "disorder", values_to = "pct") %>%
+  mutate(disorder = factor(disorder,
+                           levels = c("anxiety_pct", "affective_pct", "substance_pct"),
+                           labels = c("Anxiety", "Affective", "Substance use")))
+
+p_disorders <- ggplot(plot_disorders,
+                      aes(x = age_group, y = pct, colour = sex, group = sex)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  facet_wrap(~ disorder) +
+  expand_limits(y = 0) +
+  labs(
+    title    = "12-month prevalence by disorder group, age and sex",
+    subtitle = "Australians aged 16–85, 2020–2022",
+    x        = "Age group (years)",
+    y        = "Prevalence (%)",
+    colour   = NULL,
+    caption  = "Source: ABS National Study of Mental Health and Wellbeing 2020–22"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+
+p_disorders
+
+ggsave("outputs/figures/prevalence_by_disorder_age_sex.png",
+       p_disorders, width = 10, height = 5, dpi = 300)
