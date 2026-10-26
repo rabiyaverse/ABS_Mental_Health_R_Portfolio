@@ -18,6 +18,8 @@ Health and Wellbeing 2020–2022. Built in R.
   to 1.1 at 75–85
 ![12-month prevalence of any mental disorder by age and sex](outputs/figures/prevalence_any_by_age_sex.png)
 
+![12-month prevalence by disorder group, age and sex](outputs/figures/prevalence_by_disorder_age_sex.png)
+
 ## Data
 
 Australian Bureau of Statistics, *National Study of Mental Health and
