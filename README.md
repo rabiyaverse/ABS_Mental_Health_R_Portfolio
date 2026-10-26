@@ -16,6 +16,7 @@ Health and Wellbeing 2020–2022. Built in R.
 - The relative sex gap was broadly stable across age groups (PR 1.23–1.45),
   while the absolute gap narrowed from 13.2 percentage points at 16–24
   to 1.1 at 75–85
+![12-month prevalence of any mental disorder by age and sex](outputs/figures/prevalence_any_by_age_sex.png)
 
 ## Data
 
